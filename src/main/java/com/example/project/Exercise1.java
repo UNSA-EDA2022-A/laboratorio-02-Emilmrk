@@ -8,14 +8,22 @@ public class Exercise1 {
 
 		Exercise1 obj = new Exercise1();
 		Scanner sc = new Scanner(System.in);
+		System.out.println("inicio");
 		while (true) {
 			int n = sc.nextInt();
-			System.out.println(obj.esCuadradoPerfecto(n));			
+			System.out.println(obj.esCuadradoPerfecto(n,n-1));			
 		}
 	}
 
-	public boolean esCuadradoPerfecto(int numero) {
-
-		return false;
+	public boolean esCuadradoPerfecto(double numero, double count) {
+		if(count<=1) {
+			return false;
+		}
+		if(count*count==numero) {
+			return true;
+		}else {
+			
+			return esCuadradoPerfecto(numero, count-1);
+		}
 	}
 }
